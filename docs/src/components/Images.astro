@@ -1,7 +1,8 @@
 ---
+import path from "path";
 import { EyeIcon, EyeOffIcon } from "astro-feather";
 import { Image } from "astro:assets";
-import { getThumbHashAttribute } from "../js/utils.js";
+import { getThumbHashAttribute, dynamicViteAssetImport, dd } from "../js/utils.js";
 
 interface Props {
   strategy: "canvas" | "average";
@@ -9,18 +10,14 @@ interface Props {
   imagePath: string;
 }
 
-const loadImage = async (path: string) => {
-  const image: { default: ImageMetadata } = await import(
-    /* @vite-ignore */ path
-  );
-  return image.default; // This is the ImageMetadata object
-};
 
 const { imagePath, strategy, title } = Astro.props;
-const image = await loadImage(imagePath);
+const image = (await dynamicViteAssetImport(imagePath)).default;
 
 const average = strategy === "average";
-const absoluteImagePath = image.src.replace(/^\/@fs/, "").replace(/\?.*/, "");
+
+const absoluteImagePath = path.resolve(process.cwd(), image.src.replace(/^\/@fs/, "").replace(/\?.*/, ""));
+dd({absoluteImagePath});
 
 const hash = await getThumbHashAttribute(absoluteImagePath);
 // console.log({ hash });

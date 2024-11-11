@@ -1,3 +1,4 @@
+import path from "path";
 import * as ThumbHash from "thumbhash";
 import { createCanvas, loadImage } from "canvas";
 
@@ -12,7 +13,7 @@ export async function getThumbHashAttribute(path: string) {
 /**
  * Dump and die
  */
-function dd(...args: any[]) {
+export function dd(...args: any[]) {
   console.log(...args);
   process.exit();
 }
@@ -61,4 +62,31 @@ function contain(width: number, height: number, size: number) {
     width: Math.round(width * scaleFactor),
     height: Math.round(height * scaleFactor),
   };
+}
+
+/**
+ *
+ * @see https://github.com/withastro/astro/issues/3373
+ * @see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
+ */
+export async function dynamicViteAssetImport(filePath: string) {
+  const { name, ext, root, base, dir } = path.parse(filePath);
+  switch (ext) {
+    case ".webp":
+      return import(`../images/${name}.webp`);
+    case ".jpg":
+      return import(`../images/${name}.jpg`);
+    case ".png":
+      return import(`../images/${name}.png`);
+    case ".svg":
+      return import(`../images/${name}.svg`);
+    case ".gif":
+      return import(`../images/${name}.gif`);
+    case ".avif":
+      return import(`../images/${name}.avif`);
+    case ".jpeg":
+      return import(`../images/${name}.jpeg`);
+    default:
+      return import(`../images/${name}.jpg`);
+  }
 }
