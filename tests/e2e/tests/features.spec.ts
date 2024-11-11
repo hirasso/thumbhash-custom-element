@@ -13,7 +13,7 @@ test.describe("Features", () => {
     await page.waitForTimeout(2000);
 
     // Locate the thumb-hash element
-    const canvas = page.locator('.demo.--canvas thumb-hash canvas');
+    const canvas = page.getByTestId('demos-1').locator('.demo.--canvas thumb-hash canvas');
     expect(canvas).toHaveCount(1);
     expect(canvas).toHaveAttribute('width');
     expect(canvas).toHaveAttribute('height');
@@ -26,8 +26,8 @@ test.describe("Features", () => {
 
     await page.waitForTimeout(2000);
 
-    const div = page.locator('.demo.--average thumb-hash div');
+    const div = page.getByTestId('demos-1').locator('.demo.--average thumb-hash div');
     expect(div).toHaveCount(1);
-    expect(div).toHaveAttribute('style', 'width: 100%; height: 100%; background: rgb(111, 51, 0);');
+    expect(div).toHaveAttribute('style', 'width: 100%; height: 100%; background: rgb(163, 134, 104);');
   });
 });
