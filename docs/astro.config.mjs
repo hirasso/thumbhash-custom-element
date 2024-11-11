@@ -15,7 +15,7 @@ const expressiveCodeOptions = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://thumbhash-custom-element.js.org",
+  site: "https://thumbhash-custom-element.netlify.app",
   server: { port: 8274, host: false },
   integrations: [expressiveCode(expressiveCodeOptions), mdx()],
 });
