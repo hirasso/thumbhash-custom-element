@@ -3,7 +3,7 @@ import { thumbHashToAverageRGBA, thumbHashToRGBA } from "thumbhash";
 /**
  * Get the bytes from a hash
  */
-function getBytes(hash:string) {
+function getBytes(hash: string) {
   return Uint8Array.from(atob(hash), (c) => c.charCodeAt(0));
 }
 
