@@ -23,6 +23,7 @@
 }
 
 body {
+  line-height: 1.6;
   hyphens: auto;
 }
 
@@ -139,12 +140,21 @@ p a {
 .demos {
   display: grid;
   gap: var(--gap);
-  grid-template-columns: repeat(auto-fill, minmax(min(100% - var(--gap), 600px), 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(min(100% - var(--gap), 600px), 1fr)); */
   padding: var(--gap);
   margin-inline: auto;
+}
+@media screen and (min-width: 700px) {
+  .demos {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .demo {
   display: grid;
   gap: var(--gap);
+}
+
+.blurred {
+  filter: blur(3px);
 }

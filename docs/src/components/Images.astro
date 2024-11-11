@@ -1,0 +1,48 @@
+---
+import { EyeIcon, EyeOffIcon } from "astro-feather";
+import { Image } from "astro:assets";
+import { getThumbHashAttribute } from "../js/utils.js";
+
+interface Props {
+  strategy: "canvas" | "average";
+  title: string;
+  imagePath: string;
+}
+
+const loadImage = async (path: string) => {
+  const image: { default: ImageMetadata } = await import(
+    /* @vite-ignore */ path
+  );
+  return image.default; // This is the ImageMetadata object
+};
+
+const { imagePath, strategy, title } = Astro.props;
+const image = await loadImage(imagePath);
+
+const average = strategy === "average";
+const absoluteImagePath = image.src.replace(/^\/@fs/, "").replace(/\?.*/, "");
+
+const hash = await getThumbHashAttribute(absoluteImagePath);
+// console.log({ hash });
+---
+
+<div class:list={["demo", `--${strategy}`]}>
+  <h2>{title}</h2>
+  <figure
+    class="demo-image"
+    style={{ "aspect-ratio": image.width / image.height }}
+  >
+    <button
+      type="button"
+      onclick="this.parentNode.classList.toggle('hide-image')"
+      title="Toggle image"
+      class="button"
+    >
+      <span class="show-if-hidden"><EyeIcon /> Show image</span>
+      <span class="show-if-visible"><EyeOffIcon /> Hide image</span>
+    </button>
+
+    <thumb-hash average={average} value={hash}></thumb-hash>
+    <Image src={image} alt="A bird." loading="lazy" />
+  </figure>
+</div>

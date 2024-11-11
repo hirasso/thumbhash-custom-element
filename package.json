@@ -55,10 +55,12 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^3.1.7",
+    "@changesets/cli": "^2.27.9",
     "@playwright/test": "^1.47.2",
     "astro": "^4.15.9",
     "astro-expressive-code": "^0.37.0",
     "astro-feather": "^1.0.0",
+    "canvas": "^2.11.2",
     "jsdom": "^25.0.1",
     "microbundle": "^0.15.1",
     "prettier": "^3.3.3",

@@ -2,8 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { ArrowRightIcon, EyeIcon, EyeOffIcon } from "astro-feather";
 import { SITE_DESCRIPTION } from "../consts";
-import { Image } from "astro:assets";
-import demoImage from "../images/original.jpg";
+import Images from "../components/Images.astro";
 ---
 
 <Layout isFrontPage={true}>
@@ -13,50 +12,46 @@ import demoImage from "../images/original.jpg";
     > placeholder for your lazy-loaded images
   </p>
 
-  <section class="demos">
+  <section class="demos" data-testid="demos-1">
 
-    <div class="demo --canvas">
-      <h2>Blurry Image</h2>
-      <figure
-        class="demo-image"
-        style={{ "aspect-ratio": demoImage.width / demoImage.height }}
-      >
-        <button
-          type="button"
-          onclick="this.parentNode.classList.toggle('hide-image')"
-          title="Toggle image"
-          class="button"
-        >
-          <span class="show-if-hidden"><EyeIcon /> Show image</span>
-          <span class="show-if-visible"><EyeOffIcon /> Hide image</span>
-        </button>
+      <Images
+        imagePath="../images/original.jpg"
+        title="Thumbhash"
+        strategy="canvas"
+      />
+      <Images
+        imagePath="../images/original.jpg"
+        title="Average Color"
+        strategy="average"
+      />
 
-        <thumb-hash value="YTkGJwaRhWUIt4lbgnhZl3ath2BUBGYA" />
-        <Image src={demoImage} alt="A bird." loading="lazy" />
-      </figure>
-    </div>
+  </section>
 
-    <div class="demo --average">
-      <h2>Average Color</h2>
-      <figure
-        class="demo-image"
-        style={{ "aspect-ratio": demoImage.width / demoImage.height }}
-      >
-        <button
-          type="button"
-          onclick="this.parentNode.classList.toggle('hide-image')"
-          title="Toggle image"
-          class="button"
-        >
-          <span class="show-if-hidden"><EyeIcon /> Show image</span>
-          <span class="show-if-visible"><EyeOffIcon /> Hide image</span>
-        </button>
+  <section class="demos" data-testid="demos-2">
 
-        <thumb-hash value="YTkGJwaRhWUIt4lbgnhZl3ath2BUBGYA" average />
-        <Image src={demoImage} alt="A bird." loading="lazy" />
-      </figure>
-    </div>
+    <Images
+      imagePath="../images/duck-2.jpg"
+      title="Thumbhash"
+      strategy="canvas"
+    />
+    <Images
+      imagePath="../images/duck-2.jpg"
+      title="Average Color"
+      strategy="average"
+    />
+  </section>
 
+  <section class="demos" data-testid="demos-3">
+    <Images
+      imagePath="../images/duckling.jpg"
+      title="Thumbhash"
+      strategy="canvas"
+    />
+    <Images
+      imagePath="../images/duckling.jpg"
+      title="Average Color"
+      strategy="average"
+    />
   </section>
 </Layout>
 
