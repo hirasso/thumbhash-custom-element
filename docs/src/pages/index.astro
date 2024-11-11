@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { ArrowRightIcon, EyeIcon, EyeOffIcon } from "astro-feather";
 import { SITE_DESCRIPTION } from "../consts";
 import Images from "../components/Images.astro";
 ---
@@ -15,12 +14,12 @@ import Images from "../components/Images.astro";
   <section class="demos" data-testid="demos-1">
 
       <Images
-        imagePath="../images/original.jpg"
+        imagePath="/images/original.jpg"
         title="Thumbhash"
         strategy="canvas"
       />
       <Images
-        imagePath="../images/original.jpg"
+        imagePath="/images/original.jpg"
         title="Average Color"
         strategy="average"
       />
@@ -30,12 +29,12 @@ import Images from "../components/Images.astro";
   <section class="demos" data-testid="demos-2">
 
     <Images
-      imagePath="../images/duck-2.jpg"
+      imagePath="/images/duck-2.jpg"
       title="Thumbhash"
       strategy="canvas"
     />
     <Images
-      imagePath="../images/duck-2.jpg"
+      imagePath="/images/duck-2.jpg"
       title="Average Color"
       strategy="average"
     />
@@ -43,12 +42,12 @@ import Images from "../components/Images.astro";
 
   <section class="demos" data-testid="demos-3">
     <Images
-      imagePath="../images/duckling.jpg"
+      imagePath="/images/duckling.jpg"
       title="Thumbhash"
       strategy="canvas"
     />
     <Images
-      imagePath="../images/duckling.jpg"
+      imagePath="/images/duckling.jpg"
       title="Average Color"
       strategy="average"
     />

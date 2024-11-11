@@ -24,11 +24,6 @@ jobs:
         with:
           run_install: true
 
-      # Astro needs sharp to process images. Sharp is not installed automatically in CI
-      # @see https://github.com/withastro/astro/issues/9536#issuecomment-1880058215
-      - name: Install sharp
-        run: pnpm add sharp
-
       - name: Install Playwright Browsers
         run: pnpm run test:e2e:install
 
