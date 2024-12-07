@@ -4,10 +4,12 @@ import { cpSync, rmSync } from "node:fs";
 
 export function buildAndInjectDistFiles(folder: string): AstroIntegration {
   return {
-    name: "copy-files",
+    name: "build-and-inject",
     hooks: {
-      "astro:config:setup": async ({ config, command, isRestart }) => {
+      "astro:config:setup": async ({ config, command, isRestart, logger }) => {
         if (command !== "build") return;
+
+        logger.info("Building and injecting library...");
 
         // cleanup
         rmSync(`./website/public/${folder}`, { recursive: true, force: true });
@@ -17,6 +19,8 @@ export function buildAndInjectDistFiles(folder: string): AstroIntegration {
 
         // inject
         cpSync("./dist/", `./website/public/${folder}/`, { recursive: true });
+
+        logger.info("Injected library into astro's /public folder!");
       },
     },
   };
