@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0
+
+### Minor Changes
+
+- 017b02b: Fix readonly `shadowRoot` assignment. Basically only from this version, the library starts to be usable 😅
+
+### Patch Changes
+
+- 017b02b: Fix instructions for import statements
+- 017b02b: Test the umd version in e2e tests instead of the development version
+- eb99ef4: Make the umd bundle self-initializing and update the README accordingly
+
 ## 0.2.4
 
 ### Patch Changes
