@@ -1,6 +1,6 @@
 {
   "name": "@hirasso/thumbhash-custom-element",
-  "amdName": "ThumbhashCustomElement",
+  "amdName": "ThumbhashElement",
   "version": "0.2.4",
   "description": "A custom element that renders a thumbhash placeholder for your lazy-loaded images 🎨",
   "author": {
@@ -38,7 +38,7 @@
     "prepublishOnly": "pnpm build",
     "build": "pnpm clean && pnpm build:module && pnpm build:bundle",
     "build:module": "BROWSERSLIST_ENV=modern microbundle src/index.ts --format modern,esm,cjs",
-    "build:bundle": "BROWSERSLIST_ENV=production microbundle src/ThumbHashElement.ts --format umd --external none",
+    "build:bundle": "BROWSERSLIST_ENV=production microbundle src/umd.ts --format umd --external none",
     "watch": "BROWSERSLIST_ENV=development microbundle src/index.ts --watch --format modern",
     "website:dev": "astro dev --root website",
     "website:build": "astro build --root website",
@@ -46,7 +46,7 @@
     "test": "pnpm test:unit && pnpm test:e2e",
     "test:unit": "vitest run --config ./tests/unit/vitest.config.ts",
     "test:unit:watch": "vitest --config ./tests/unit/vitest.config.ts",
-    "test:e2e": "pnpm exec playwright test --config ./tests/e2e/config.playwright.ts",
+    "test:e2e": "pnpm exec playwright test --config ./tests/e2e/playwright.config.ts",
     "test:e2e:dev": "PLAYWRIGHT_ENV=dev pnpm test:e2e --ui",
     "test:e2e:install": "pnpm exec playwright install --with-deps",
     "release": "pnpm validate && pnpm bump && changeset publish",

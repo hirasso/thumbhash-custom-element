@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const baseURL = "http://localhost:8274";
 
@@ -12,9 +13,9 @@ const baseURL = "http://localhost:8274";
  */
 export default defineConfig({
   /* Run this file before starting the tests */
-  globalSetup: undefined, // path.resolve(__dirname, "./setup.ts"),
+  // globalSetup: path.resolve(__dirname, './playwright.setup.ts'),
   /* Run this file after all the tests have finished */
-  globalTeardown: undefined, // path.resolve(__dirname, './playwright.teardown.ts'),
+  // globalTeardown: path.resolve(__dirname, './playwright.teardown.ts'),
   /* Directory containing the test files */
   testDir: "./tests",
   /* Folder for test artifacts: screenshots, videos, ... */

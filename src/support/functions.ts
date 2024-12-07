@@ -1,4 +1,8 @@
-import { thumbHashToAverageRGBA, thumbHashToRGBA, thumbHashToDataURL } from "thumbhash";
+import {
+  thumbHashToAverageRGBA,
+  thumbHashToRGBA,
+  thumbHashToDataURL,
+} from "thumbhash";
 
 /**
  * Get the bytes from a hash

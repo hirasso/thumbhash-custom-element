@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { SITE_DESCRIPTION } from "../consts";
 import DemoImage from "../components/DemoImage.astro";
+const isDev = import.meta.env.MODE === "development";
+const isServe = import.meta.env.MODE === "serve";
+const isBuild = import.meta.env.MODE === "production";
 ---
 
 <Layout isFrontPage={true}>
@@ -54,12 +56,13 @@ import DemoImage from "../components/DemoImage.astro";
 </style>
 
 <script>
-  import { ThumbHashElement } from "../../../src/index.js";
-  ThumbHashElement.init();
-  // console.log(document.querySelector('thumb-hash')?.shadowRoot?.querySelector('canvas')?.outerHTML);
+  if (import.meta.env.MODE === 'development') {
+    import("../../../src/index.js").then(({ ThumbHashElement }) => {
+      ThumbHashElement.init();
+    });
+  } else {
+    const script = document.createElement('script');
+    script.src = '/thumbhash-custom-element/index.umd.js';
+    document.body.appendChild(script);
+  }
 </script>
-
-<!-- <script type="module">
-  import ThumbHashElement from "https://unpkg.com/@hirasso/thumbhash-custom-element@0?module";
-  ThumbHashElement.init();
-</script> -->

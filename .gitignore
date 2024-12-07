@@ -26,3 +26,4 @@ pnpm-debug.log*
 playwright-report/
 /playwright/.cache/
 playwright-results.json
+website/public/thumbhash-custom-element
