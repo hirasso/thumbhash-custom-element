@@ -18,7 +18,6 @@ export default class ThumbHashElement extends HTMLElement {
    */
   constructor() {
     super();
-
     this.shadow = this.attachShadow({ mode: "open" });
   }
 
@@ -31,17 +30,70 @@ export default class ThumbHashElement extends HTMLElement {
     }
   }
 
+  /**
+   * Get the ovserved attributes
+   */
+  static get observedAttributes() {
+    return ["value", "strategy"];
+  }
+
+  /**
+   * [value] getter and setter
+   */
+  get value() {
+    return (this.getAttribute("value") || "").trim();
+  }
+  set value(newValue: string) {
+    this.setAttribute("value", newValue);
+  }
+
+  /**
+   * [strategy] getter and setter
+   */
+  get strategy(): Strategy {
+    const attr = (this.getAttribute("strategy") || "").trim().toLowerCase();
+    return attr === "img" || attr === "average" ? attr : "canvas";
+  }
+  set strategy(newStrategy: Strategy) {
+    this.setAttribute("strategy", newStrategy);
+  }
+
+  /**
+   * Runs anytime on of the observed attributes is set/changed
+   */
+  attributeChangedCallback(
+    name: string,
+    oldValue: string | null,
+    newValue: string | null
+  ) {
+    if (oldValue === newValue) return;
+
+    if (["value", "strategy"].includes(name)) {
+      this.render();
+    }
+  }
+
+  /**
+   * Runs anytime when the element is being connnected
+   */
   connectedCallback() {
     // Hide from screen readers
     this.setAttribute("aria-hidden", "true");
+    this.render();
+  }
 
-    const hash = this.value.trim();
-    if (!hash) return;
+  /**
+   * Render the hash
+   */
+  render() {
+    const { value: hash, strategy, shadow } = this;
 
     // Clear previous content
-    this.shadow.innerHTML = "";
+    shadow.innerHTML = "";
 
-    switch (this.strategy) {
+    if (!hash) return;
+
+    switch (strategy) {
       case "img":
         this.renderImage(hash);
         break;
@@ -54,22 +106,6 @@ export default class ThumbHashElement extends HTMLElement {
         this.renderCanvas(hash);
         break;
     }
-  }
-
-  get value() {
-    return (this.getAttribute("value") || "").trim();
-  }
-
-  get strategy(): Strategy {
-    const attr = (this.getAttribute("strategy") || "").trim();
-    if (attr === "img" || attr === "average") {
-      return attr;
-    }
-    return "canvas";
-  }
-
-  get average() {
-    return !!this.getAttribute("average");
   }
 
   /**
