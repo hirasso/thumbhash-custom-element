@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.1
+
+### Patch Changes
+
+- 17724f7: Ensure garbage collection of observed elements
+
 ## 0.5.0
 
 ### Minor Changes
