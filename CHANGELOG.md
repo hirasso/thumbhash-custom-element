@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+### Minor Changes
+
+- 82054da: Wait until images come close to the viewport before rendering the blurhash
+
 ## 0.4.0
 
 ### Minor Changes
