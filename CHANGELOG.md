@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 82054da: Wait until images come close to the viewport before rendering the blurhash
+- 82054da: Wait until a `<thumb-hash>` comes close to the viewport before rendering the hash
 
 ## 0.4.0
 
