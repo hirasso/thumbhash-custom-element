@@ -26,11 +26,18 @@ import { ThumbHashElement } from "@hirasso/thumbhash-custom-element";
 ThumbHashElement.init();
 ```
 
-Or include the self-initializing production build from a CDN:
+Or include the self-initializing production build from a CDN in your `<head>`:
 
 ```html
-<script src="https://unpkg.com/@hirasso/thumbhash-custom-element@0"></script>
+<head>
+  <!-- ... -->
+  <script src="https://unpkg.com/@hirasso/thumbhash-custom-element@0"></script>
+</head>
 ```
+
+> [!TIP]
+> Try to include the script as early as possible on your page. Preferably in the `<head>`
+> and without any of the `defer`, `async` or `type="module"` attributes.
 
 ## Usage
 
