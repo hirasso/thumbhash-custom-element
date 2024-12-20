@@ -41,3 +41,15 @@ const { title, description, noindex, image = '/social.png' } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- the library script -->
+<script>
+  if (import.meta.env.MODE === 'development') {
+    import("../../../src/index.js").then(({ ThumbHashElement }) => {
+      ThumbHashElement.init();
+    });
+  } else {
+    const script = document.createElement('script');
+    script.src = '/thumbhash-custom-element/index.umd.js';
+    document.body.appendChild(script);
+  }
+</script>
