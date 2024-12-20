@@ -61,13 +61,7 @@ export default class ThumbHashElement extends HTMLElement {
   /**
    * Runs anytime on of the observed attributes is set/changed
    */
-  attributeChangedCallback(
-    name: string,
-    oldValue: string | null,
-    newValue: string | null,
-  ) {
-    if (oldValue === newValue) return;
-
+  attributeChangedCallback(name: string) {
     if (["value", "strategy"].includes(name)) {
       this.render();
     }
