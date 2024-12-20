@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0
+
+### Minor Changes
+
+- 82054da: Wait until a `<thumb-hash>` comes close to the viewport before rendering the hash
+
 ## 0.4.0
 
 ### Minor Changes
