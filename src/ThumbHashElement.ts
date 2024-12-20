@@ -5,6 +5,7 @@ import {
 } from "./support/functions.js";
 
 import type { Strategy } from "./support/defs.js";
+import { observe } from "./support/observer.js";
 
 /**
  * A custom element that automatically renders a thumbhash placeholder
@@ -63,7 +64,7 @@ export default class ThumbHashElement extends HTMLElement {
    */
   attributeChangedCallback(name: string) {
     if (["value", "strategy"].includes(name)) {
-      this.render();
+      observe(this);
     }
   }
 
@@ -73,7 +74,7 @@ export default class ThumbHashElement extends HTMLElement {
   connectedCallback() {
     // Hide from screen readers
     this.setAttribute("aria-hidden", "true");
-    this.render();
+    observe(this);
   }
 
   /**
