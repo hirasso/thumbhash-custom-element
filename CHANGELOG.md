@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2
+
+### Patch Changes
+
+- dc5a96c: Simplify the observer
+
 ## 0.5.1
 
 ### Patch Changes
