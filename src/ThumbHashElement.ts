@@ -5,7 +5,7 @@ import {
 } from "./support/functions.js";
 
 import type { Strategy } from "./support/defs.js";
-import { observe } from "./support/observer.js";
+import { observe, unobserve } from "./support/observer.js";
 
 /**
  * A custom element that automatically renders a thumbhash placeholder
@@ -75,6 +75,13 @@ export default class ThumbHashElement extends HTMLElement {
     // Hide from screen readers
     this.setAttribute("aria-hidden", "true");
     observe(this);
+  }
+
+  /**
+   * Runs anytime when the element is being removed from the dom
+   */
+  disconnectedCallback() {
+    unobserve(this);
   }
 
   /**

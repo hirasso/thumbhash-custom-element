@@ -1,6 +1,6 @@
 import type { ThumbHashElement } from "../index.js";
 
-const observedElements = new Set<ThumbHashElement>();
+const observedElements = new WeakSet<ThumbHashElement>();
 
 let observer: IntersectionObserver | undefined;
 
@@ -10,23 +10,15 @@ const callback: IntersectionObserverCallback = (entries, observer) => {
     if (!isIntersecting) return;
 
     const element = target as ThumbHashElement;
-    unobserve(element, observer);
+    unobserve(element);
     element.render();
   });
 };
 
-/** Unobserve an element */
-function unobserve(element: ThumbHashElement, observer: IntersectionObserver) {
-  if (!observedElements.has(element)) return;
-
-  observer.unobserve(element);
-  observedElements.delete(element);
-}
-
 /** Observe an element */
 export function observe(element: ThumbHashElement) {
   /** IntersectionObserver is not available or we're not in a window context */
-  if (!window?.IntersectionObserver) {
+  if (window?.IntersectionObserver == null) {
     element.render();
     return;
   }
@@ -43,4 +35,12 @@ export function observe(element: ThumbHashElement) {
 
   observer.observe(element);
   observedElements.add(element);
+}
+
+/** Unobserve an element */
+export function unobserve(element: ThumbHashElement) {
+  if (!observedElements.has(element)) return;
+
+  observer?.unobserve(element);
+  observedElements.delete(element);
 }
