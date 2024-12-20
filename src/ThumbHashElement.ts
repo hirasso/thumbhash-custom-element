@@ -16,9 +16,6 @@ export default class ThumbHashElement extends HTMLElement {
     super();
 
     this.shadow = this.attachShadow({ mode: "open" });
-
-    // Hide from screen readers
-    this.setAttribute("aria-hidden", "true");
   }
 
   /**
@@ -31,10 +28,14 @@ export default class ThumbHashElement extends HTMLElement {
   }
 
   connectedCallback() {
+    // Hide from screen readers
+    this.setAttribute("aria-hidden", "true");
+
     const hash = this.value.trim();
-    if (!hash) {
-      return;
-    }
+    if (!hash) return;
+
+    // Clear previous content
+    this.shadow.innerHTML = "";
 
     switch (this.strategy) {
       case "img":
@@ -52,7 +53,7 @@ export default class ThumbHashElement extends HTMLElement {
   }
 
   get value() {
-    return this.getAttribute("value") || "";
+    return (this.getAttribute("value") || "").trim();
   }
 
   get strategy(): Strategy {
