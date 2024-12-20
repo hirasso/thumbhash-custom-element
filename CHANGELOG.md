@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0
+
+### Minor Changes
+
+- 58a5995: Add support for `document.createElement`. Remove illegal operations from constructor.
+
+### Patch Changes
+
+- 58a5995: (re-)render when the `value` or `strategy` attributes are being changed
+
 ## 0.3.0
 
 ### Minor Changes
