@@ -12,6 +12,10 @@ import type { Strategy } from "./support/defs.js";
 export default class ThumbHashElement extends HTMLElement {
   shadow: ShadowRoot;
 
+  /**
+   * Do not do anything in the constructor, except calling super() and attaching the shadow DOM
+   * @see https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance
+   */
   constructor() {
     super();
 
