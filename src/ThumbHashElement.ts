@@ -13,6 +13,9 @@ import { observe, unobserve } from "./support/observer.js";
 export default class ThumbHashElement extends HTMLElement {
   shadow: ShadowRoot;
 
+  currentHash: string | undefined;
+  currentStrategy: Strategy | undefined;
+
   /**
    * Do not do anything in the constructor, except calling super() and attaching the shadow DOM
    * @see https://html.spec.whatwg.org/multipage/custom-elements.html#custom-element-conformance
@@ -90,6 +93,11 @@ export default class ThumbHashElement extends HTMLElement {
   render() {
     const { value: hash, strategy, shadow } = this;
 
+    if (!this.needsRender(hash, strategy)) return;
+
+    this.currentHash = hash;
+    this.currentStrategy = strategy;
+
     // Clear previous content
     shadow.innerHTML = "";
 
@@ -108,6 +116,17 @@ export default class ThumbHashElement extends HTMLElement {
         this.renderCanvas(hash);
         break;
     }
+  }
+
+  /**
+   * Check if rendering is necessary
+   * - if the shadow is empty
+   * - if either hash or strategy has changed
+   */
+  needsRender(hash: string, strategy: Strategy): boolean {
+    if (!this.shadow.innerHTML.trim()) return true;
+
+    return hash !== this.currentHash || strategy !== this.currentStrategy;
   }
 
   /**
