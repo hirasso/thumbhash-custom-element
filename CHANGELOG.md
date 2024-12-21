@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.3
+
+### Patch Changes
+
+- d050c4f: Prevent repeated rendering if either one of these conditions apply:
+
+  - the shadow root is not empty
+  - neither the `value` nor the `strategy` attributes have changed since the last render
+
 ## 0.5.2
 
 ### Patch Changes
