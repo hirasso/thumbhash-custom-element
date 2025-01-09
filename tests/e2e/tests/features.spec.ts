@@ -17,7 +17,7 @@ test.describe("Strategies", () => {
     expect(canvas).toHaveCount(1);
     expect(canvas).toHaveAttribute('width');
     expect(canvas).toHaveAttribute('height');
-    expect(canvas).toHaveAttribute('style', 'width: 100%; height: 100%;');
+    expect(canvas).toHaveAttribute('style', 'width: 100%; height: 100%; display: block;');
   });
 
   test("Renders the average color in a div (strategy: 'average')", async ({ page }) => {
@@ -39,7 +39,7 @@ test.describe("Strategies", () => {
 
     const div = page.getByTestId('demos-2').locator('thumb-hash[strategy="img"] img');
     expect(div).toHaveCount(1);
-    expect(div).toHaveAttribute('style', 'width: 100%; height: 100%;');
+    expect(div).toHaveAttribute('style', 'width: 100%; height: 100%; display: block;');
     expect(div).toHaveAttribute('alt', '');
   });
 });
