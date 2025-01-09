@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.4
+
+### Patch Changes
+
+- 4b5df2e: Add `display: block` to the default styles for the `canvas` and `img` render strategies, to optimize rendering and simplify styling.
+
 ## 0.5.3
 
 ### Patch Changes
