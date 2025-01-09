@@ -1,7 +1,5 @@
 import { describe, expect, it } from "vitest";
 
-import * as ModuleBuild from "../../../src/index.js";
-import type { Strategy } from "../../../src/index.js";
 import * as UMDBuild from "../../../src/ThumbHashElement.js";
 
 describe("Exports", () => {

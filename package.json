@@ -13,7 +13,7 @@
     "type": "git",
     "url": "https://github.com/hirasso/thumbhash-custom-element.git"
   },
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "type": "module",
   "source": "./src/index.ts",
   "main": "./dist/index.cjs",

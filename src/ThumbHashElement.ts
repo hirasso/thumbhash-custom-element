@@ -1,3 +1,9 @@
+/**
+ * https://github.com/hirasso/thumbhash-custom-element
+ * @copyright (c) Rasso Hilber <mail@rassohilber.com>
+ * @license: GPL-3.0-or-later
+ */
+
 import {
   decodeThumbHash,
   getAverageColor,
@@ -138,6 +144,7 @@ export default class ThumbHashElement extends HTMLElement {
 
     canvas.style.width = "100%";
     canvas.style.height = "100%";
+    canvas.style.display = "block";
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -171,6 +178,7 @@ export default class ThumbHashElement extends HTMLElement {
     const image = document.createElement("img");
     image.style.width = "100%";
     image.style.height = "100%";
+    image.style.display = "block";
     image.alt = "";
     image.src = getDataURI(hash);
 
