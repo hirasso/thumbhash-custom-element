@@ -1,3 +1,9 @@
+/**
+ * https://github.com/hirasso/thumbhash-custom-element
+ * @copyright (c) Rasso Hilber <mail@rassohilber.com>
+ * @license: GPL-3.0-or-later
+ */
+
 import {
   decodeThumbHash,
   getAverageColor,
