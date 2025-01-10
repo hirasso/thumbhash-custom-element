@@ -105,7 +105,7 @@ export default class ThumbHashElement extends HTMLElement {
     this.currentStrategy = strategy;
 
     // Clear previous content
-    shadow.innerHTML = "";
+    shadow.innerHTML = "<slot></slot>";
 
     if (!hash) return;
 
