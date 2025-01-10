@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.5
+
+### Patch Changes
+
+- 4b1bf37: Render light DOM child nodes of a `<thumb-hash>` via `<slot>`
+
 ## 0.5.4
 
 ### Patch Changes
