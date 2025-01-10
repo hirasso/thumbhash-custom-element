@@ -49,7 +49,7 @@ describe("createElement", () => {
   it("(re-)renders if setting [value] or [strategy]", () => {
     const el: ThumbHashElement = document.createElement("thumb-hash");
     document.body.appendChild(el);
-    expect(el.shadow.innerHTML).toBe("");
+    expect(el.shadow.innerHTML).toBe("<slot></slot>");
 
     el.setAttribute("value", hash);
     expect(el.shadow.querySelector("canvas")).not.toBe(null);
