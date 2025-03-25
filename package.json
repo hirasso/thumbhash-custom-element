@@ -32,7 +32,6 @@
     "dist"
   ],
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf ./dist",
     "format": "pnpm exec prettier 'src/**/*.{js,ts,mjs}' --write",
     "prepublishOnly": "pnpm build",
@@ -71,5 +70,11 @@
     "sharp": "^0.33.5",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "error"
+    }
   }
 }
