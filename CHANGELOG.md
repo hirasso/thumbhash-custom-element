@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.6
+
+### Patch Changes
+
+- 85b6ed5: Use `devEngines.packageManager` instead of `npx only-allow pnpm` for enforcing `pnpm` as a the manager
+
 ## 0.5.5
 
 ### Patch Changes
