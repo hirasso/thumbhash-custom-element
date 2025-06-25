@@ -3,6 +3,7 @@
   "amdName": "ThumbhashElement",
   "version": "0.5.6",
   "description": "A custom element that renders a thumbhash placeholder for your lazy-loaded images 🎨",
+  "license": "MIT",
   "author": {
     "name": "Rasso Hilber",
     "email": "mail@rassohilber.com",
@@ -13,7 +14,6 @@
     "type": "git",
     "url": "https://github.com/hirasso/thumbhash-custom-element.git"
   },
-  "license": "GPL-3.0-or-later",
   "type": "module",
   "source": "./src/index.ts",
   "main": "./dist/index.cjs",
