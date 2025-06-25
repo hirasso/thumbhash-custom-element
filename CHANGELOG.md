@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.7
+
+### Patch Changes
+
+- 0dc61d9: Switch license from GPL to MIT
+
 ## 0.5.6
 
 ### Patch Changes
