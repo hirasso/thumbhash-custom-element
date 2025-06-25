@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.8
+
+### Patch Changes
+
+- d17687f: Fix paths to the main branch in READMEs (formerly master)
+
 ## 0.5.7
 
 ### Patch Changes
