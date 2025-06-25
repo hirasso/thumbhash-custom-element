@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.8
+
+### Patch Changes
+
+- d17687f: Fix paths to the main branch in READMEs (formerly master)
+- 1a37663: Try to make triggering tests more robust wihout PAT
+
 ## 0.5.7
 
 ### Patch Changes
