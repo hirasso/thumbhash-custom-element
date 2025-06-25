@@ -8,7 +8,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  actions: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.HIRASSO_ACTIONS_TOKEN }}
 
       # Setup PNPM first, so that we use the cache in the next action
       - name: Setup PNPM
@@ -50,5 +51,5 @@ jobs:
           version: pnpm changeset version
           publish: pnpm changeset publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.HIRASSO_ACTIONS_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
