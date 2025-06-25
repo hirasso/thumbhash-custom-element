@@ -6,7 +6,7 @@ body:
 
         - ✅ Make sure you are running the latest version of the library
         - ✅ Make sure you have browsed our [docs](https://github.com/hirasso/thumbhash-custom-element/)
-        - ✅ Make sure you read our [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/master/CODE_OF_CONDUCT.md)
+        - ✅ Make sure you read our [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/main/CODE_OF_CONDUCT.md)
         - ✅ Make sure to check [discussions](https://github.com/hirasso/thumbhash-custom-element/discussions) and [existing issues](https://github.com/issues?q=is%3Aissue+repo%3Ahirasso%2Fthumbhash-custom-element+). It's very likely there already is an answer waiting for you somewhere out there :)
 
   - type: textarea
@@ -38,7 +38,7 @@ body:
           required: true
         - label: I have checked [discussions](https://github.com/hirasso/thumbhash-custom-element/discussions) and [existing issues](https://github.com/issues?q=is%3Aissue+repo%3Ahirasso%2Fthumbhash-custom-element+) for answers to my question
           required: true
-        - label: I agree to follow this project's [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/master/CODE_OF_CONDUCT.md)
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/main/CODE_OF_CONDUCT.md)
           required: true
         - label: I have provided all necessary information to the best of my knowledge
           required: true
