@@ -7,7 +7,7 @@ body:
       value: |
         ### Thanks for taking the time to request a new feature! 🏓 Before you begin:
 
-        - ✅ Please make sure you read our [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/master/CODE_OF_CONDUCT.md)
+        - ✅ Please make sure you read our [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/main/CODE_OF_CONDUCT.md)
         - ✅ Make sure to check [discussions](https://github.com/hirasso/thumbhash-custom-element/discussions) and [existing issues](https://github.com/issues?q=is%3Aissue+repo%3Ahirasso%2Fthumbhash-custom-element+). Maybe the feature does already exist :)
 
   - type: textarea
@@ -50,7 +50,7 @@ body:
           required: true
         - label: I have checked [discussions](https://github.com/hirasso/thumbhash-custom-element/discussions) and [existing issues](https://github.com/issues?q=is%3Aissue+repo%3Ahirasso%2Fthumbhash-custom-element+) for related problems
           required: true
-        - label: I agree to follow this project's [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/master/CODE_OF_CONDUCT.md)
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/hirasso/thumbhash-custom-element/blob/main/CODE_OF_CONDUCT.md)
           required: true
         - label: I have provided all necessary information to the best of my knowledge
           required: true
