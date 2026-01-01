@@ -13,7 +13,7 @@
 
 ## Scope & Motivation
 
-This package is intended for **frontend-only use only**. It assumes you have **already pre-generated your thumbhashes on the server or during an SSG build step**. Many server-side libraries already provide [convenience functions](https://github.com/SRWieZ/thumbhash?tab=readme-ov-file#usage) that will generate a thumbhash data URI for you. This is fine for pages with a few images, but will quickly increase the size of your html if you have more images. This is where `thumbhash-custom-element` comes in. All data-heavy calculation will be executed on the frontend, keeping your html small.
+This package is intended for **frontend use only**. It assumes you have **already pre-generated your thumbhashes on the server or during an SSG build step**. Many server-side libraries already provide [convenience functions](https://github.com/SRWieZ/thumbhash?tab=readme-ov-file#usage) that will generate a thumbhash data URI for you. This is fine for pages with a few images, but will quickly increase the size of your html if you have more images. This is where `thumbhash-custom-element` comes in. All data-heavy calculation will be executed on the frontend, keeping your html small.
 
 ## Installation
 
