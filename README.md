@@ -1,4 +1,4 @@
-# &#x3C;thumb-hash&#x3E;
+# &#x3C;thumb-hash&#x3E; element
 
 [![Test status](https://img.shields.io/github/actions/workflow/status/hirasso/thumbhash-custom-element/tests.yml?branch=main&label=tests)](https://github.com/hirasso/thumbhash-custom-element/actions/workflows/tests.yml)
 [![License](https://img.shields.io/github/license/hirasso/thumbhash-custom-element.svg)](https://github.com/hirasso/thumbhash-custom-element/blob/main/LICENSE)
